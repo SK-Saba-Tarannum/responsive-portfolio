@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        html,body{
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+
+        }
+        body{
+            background-color: rgb(65, 72, 76);
+            font-family: sans-serif;
+        }
+        #navtag{
+            
+
+            text-decoration: none;
+            height:30px;
+            color:rgb(231, 240, 240);
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            
+        }
+        #navtag h1{
+            position:fixed;
+            left:20px;
+            top:20px;
+            
+        }
+        #navtag ul{
+            position:fixed;
+            top:20px;
+            right:20px;
+            
+            list-style: none;
+            display:flex;
+            flex-direction: row;
+            gap:20px;
+        }
+        
+        #navtagmobileview{
+            
+            display:none;
+            justify-content: space-between;
+            }
+        #navtagmobileviewul{
+            list-style: none;
+            display:flex;
+            flex-direction:column;
+            gap:20px;
+            justify-content: center;
+            align-items: center;
+            }
+        
+        #closeingicon{
+            position: absolute;
+            right:30px;
+            top:10px;
+            display:none;
+            
+        }
+
+        .bar{
+            color:white;
+        }
+        .bar:hover{
+            color:aqua;
+        }
+        #menu{
+            display:none;
+        }
+        #portfolio{
+            font-size:20px;
+        }
+        /* -------------- */
+        #innercontainer{
+            height:110vh;
+            display:flex;
+            flex-direction: row;
+            gap:10px;
+            justify-content: center;
+            align-items: center;
+           }
+        #box1{
+            height:400px;
+            width:650px;
+            padding:20px;
+            padding-top: 50px;
+            color:white;
+        }
+        #name{
+            font-size: 35px;
+        }
+        #textchanging{
+            color:aqua
+        }
+        #dynamicline{
+            font-size: 25px;
+            font-weight:1.5rem;
+        }
+        #box2{
+            height:400px;
+            width:300px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        #icons{
+            display:flex;
+            gap:20px;
+            text-decoration: none;
+            text-decoration-line: none  ;
+            color:aqua;
+        }
+        #button{
+            background-color: hwb(180 0% 0%);
+            padding:7px;
+            border-radius: 15px;
+            border: none;
+        }
+        #imgbox{
+           height:250px;
+           width:250px;
+           background-color:aqua; 
+           border-radius: 50%;
+           display:flex;
+           justify-content: center;
+           align-items: center;
+           box-shadow:5px 5px  10px rgb(68, 129, 129),-5px -5px 10px  rgb(113, 156, 156)
+        }
+        #sabaimg{
+           height:220px;
+           width:220px;
+           border-radius: 50%;
+           border: 5px solid rgb(134, 131, 131);
+            
+        }
+        .icon{
+            height:30px;
+            background-color: aqua;
+            border-radius: 10px;
+            padding:2px;
+                }
+    
+        .icon:hover{
+            rotate:10deg;
+            transform:scale(20px);
+            
+            background-color:white;
+            transition: transform 0.5s, rotate 0.3sec,
+        }
+        #one{
+            height:100vh;
+        }
+        #twotwo{
+            height:100vh;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        #one2{
+            height:400px;
+            width:400px;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #two2{
+            height:400px;
+            width:400px;
+            color:white;
+            display:flex;
+            padding:20px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+        }
+        #container2{
+            display: flex;
+            height:100vh;
+            gap:30px;
+            justify-content: center;
+            align-items: center;
+        }
+        #h12{
+            font-weight:600;
+            font-size: 50px;
+        }
+        #me{
+            color:aqua
+        }
+        #developer{
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        #button2{
+            background-color: hwb(180 0% 0%);
+            padding:7px;
+            border-radius: 15px;
+            border: none;
+            width:100px;
+            color:white;
+        }
+        #para2{
+            margin-bottom: 20px;
+        }
+        #three{
+            height:100vh;
+            text-align: center;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .three33{
+                height: 170px;
+                width:170px;
+                border-radius: 50%;
+                box-shadow: 2px  2px 5px 2px rgb(106, 169, 169) ,-2px  -2px 5px 2px rgb(106, 169, 169);
+
+                background-color:rgba(231, 243, 243, 0.1);
+                text-align: center;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                padding:10px;
+                color:white;
+                transition: background-color .4 ease-in-out 0.5s,transform 0.2s ease 0.5s;
+
+            }
+            .three33{
+                transition: background-color 3s ease-in-out 0.5s,transform 0.2s ease 0,5s;
+
+            }
+        .three33:hover{
+            /* background: linear-gradient(rgba(0,0,0,0.1),var(aqua)); */
+            background-color: rgb(143, 238, 238);
+            color:rgb(43, 42, 42);
+            transform: scale(2);
+            box-shadow:2px 3px 4px 2px black,-2px -3px 4px 2px white;
+        }
+        #container3{
+            display:grid;
+            grid-template-columns: repeat(2, 270px);
+            gap:40px;
+            justify-content: center;
+            align-items: center; 
+        
+        }
+        #container4{
+            width:auto;
+            display: grid;
+            grid-template-columns: repeat(3,250px);
+            gap:20px;
+            column-gap: 10px;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .four44{
+            height:230px;
+            width:190px;
+            
+            background-color: rgba(0, 255, 255,0.1);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 2px 4px 1px rgb(220, 230, 230),-2px -2px 4px 1px rgb(192, 202, 202);
+            }
+        .four44:hover{
+            transform: scale(2);
+        }
+        #five{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #five5{
+            height:400px;
+            width:500px;
+            }
+        #name1{
+            width:45%;
+            padding:10px;
+            border-radius: 3px;
+            border:none;
+            margin: 5px;
+        }
+        #address{
+            width:47%;
+            padding:10px;
+            border-radius: 3px;
+            border:none;
+           
+        }
+        #number{
+            width:45%;
+            padding:10px;
+            border-radius: 3px;
+            border:none;
+            margin: 5px;
+
+        }
+        #Email{
+            width:47%;
+            padding:10px;
+            border-radius: 3px;
+            border:none;
+           
+        }
+        #message{
+            width:94%;
+            height: 230px;
+            padding:4px;
+            border-radius: 3px;
+            border:none;
+            margin: 5px;
+        }
+        input{
+            background-color:rgb(12, 11, 11);
+            color:rgb(235, 230, 230);
+        }
+        #button3{
+            background-color: aqua;
+            color:black;
+            font-weight: bold;
+            border:none;
+            padding:10px;
+            border-radius: 20px;
+            margin-left: 180px;
+            margin-top: 20px;
+        }
+        #message placeholder{
+            float:left-top;
+            
+        }
+        .placeholder-left::placeholder{
+            text-align:center;
+            padding-left: 5px;
+            padding-bottom: 20px;
+            
+            }
+        .projectimg{
+            height:220px;
+            width:180px;
+            
+            background-position:center ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 20px;
+
+        }
+        #Latest{
+            text-align: center;
+            padding:10px;
+            margin-bottom: 20px;
+            color:white;
+        }
+        .span{
+            color:aqua;
+        }
+        .iconimg{
+            height:40px;
+            
+        }
+        .para3{
+            font-size: 10px;
+            font: bold;
+        }
+        @media (max-width:480px){
+            header{
+                margin-bottom: 30px;
+            }
+            
+            #navtagmobileview{
+                display:none;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(81, 178, 178);
+                padding-bottom:20px;
+                position:fixed;
+                width:100%;
+                
+                }
+            
+            #closeingicon{
+                display:none;
+                position: fixed;
+                top:20px;
+                right: 20px;
+            }
+            #menu{
+                display:block;
+            }
+            #navtag ul{
+                display:none;
+            }
+            #box1,#box2{
+                width:auto;
+                height:auto;
+                gap:0px;
+            }
+            #innercontainer{
+                flex-direction:column-reverse;
+                padding:5px;
+                height:auto;
+                }
+            #container2{
+                height:auto;
+                flex-direction: column;padding:5px;
+            }
+            #one2,#two2{
+                width:auto;
+                height:auto;
+                
+            }
+            #container3{
+                display:flex;
+                flex-direction: column;
+                height:auto;
+            }
+            #container4{
+                display:flex;
+                flex-direction: column;
+                
+            }
+            #menu{
+                position:fixed;
+                top:20px;
+                right:20px;
+            }
+            #five5{
+                width:auto;
+                padding:10px;
+            }
+            #button3{
+                display:none;
+    
+            }
+        
+        
+        }
+        @media (max-width:768px) and (max-width:490){
+            #box1,#box2{
+                width:auto;
+                gap:0px;
+            }
+            #menu{
+                display:none;
+            }
+            
+
+        
+            #innercontainer{
+                flex-direction:column-reverse;
+                padding:5px;
+                height:auto;
+                }
+            #one{
+                margin-bottom: 20px;
+            }
+            #container2{
+                height: auto;
+                flex-direction: column;padding:5px;
+            }
+            #one2,#two2{
+                width:auto;
+            }
+            #twotwo{
+                margin-bottom: 20px;
+            }
+            
+            #container3{
+                display:flex;
+                flex-direction: column;
+                height:auto;
+            }
+            #three{
+                margin-bottom: 100px;
+            }
+            
+            #container4{
+                display:flex;
+                flex-direction: column;
+                
+            }
+            #five5{
+                width:auto;
+                padding:10px;
+            }
+            #button3{
+                display:none;
+    
+            }
+        
+        
+        }
+
+
+        </style>
+</head>
+<body>
+    <section id="one">
+    <header class="navtagmob">
+        <nav id="navtag" class="nav1">
+            <h1>Portfolio</h1>
+            <svg  id="menu"xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e8eaed"><path d="M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z"/></svg>
+            <ul>
+                <li><a  href="#innercontainer"class="bar">Home</a></li>
+                </li><a  href="#twotwo"class="bar" >About</a></li>
+                </li> <a   href="#three"class="bar">Skills</a></li>
+                </li><a  href="#four"class="bar">Projects</a></li>
+                </li><a  href="#five"class="bar">Contact</a></li>
+            </ul>
+        </nav>
+        <nav id="navtagmobileview" class="nav1">
+            <ul id="navtagmobileviewul">
+                <li><a  href="#innercontainer"class="bar">Home</a></li>
+                <li><a  href="#twotwo"class="bar" >About</a></li>
+                <li> <a   href="#three"class="bar">Skills</a></li>
+                <li><a  href="#four"class="bar">Projects</a></li>
+                <li><a  href="#five"class="bar">Contact</a></li>
+            </ul>
+            <svg  id="closeingicon"xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        </nav>
+    
+    </header>
+    <div id="innercontainer" class="container1">
+        <div id="box1">
+            <h2  data-aos="fade-right" data-aos-delay="1000" data-aos-duration="2000">Hello,Its ME</h2>
+            <h1 data-aos="fade-right" data-aos-delay="1000" data-aos-duration="2000"id="name">S K Saba Tarannum</h1>
+            <h2 id="dynamicline" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="2000">And I'm a <span id="textchanging"></span></h2><br>
+            <div data-aos="fade-right" data-aos-delay="1000" data-aos-duration="2000"id="para">
+            <p>As a dedicated web developer, I excel in building dynamic, responsive websites using cutting-edge technologies. My expertise includes crafting clean, scalable code, optimizing performance, and ensuring exceptional user experiences across all devices.</p>
+                </div><br>
+            <div id="icons">
+                <a href="https://www.instagram.com/___saba___03/?utm_source=qr&igsh=ZGs2bXdsbnVoNTRm" ><img src="instagram (1).png" alt="" class="icon" id="insta"  data-aos="fade-right" data-aos-delay="1000" data-aos-duration="2000">
+                <a href="https://www.linkedin.com/in/s-k-saba-tarannum-775034287/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" ><img src="linkedin.png" alt="" class="icon" id="linkedin" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="2000">
+                <a href="" ><img src="twitter.png" alt="" class="icon"  data-aos="fade-right" data-aos-delay="1000" data-aos-duration="2000">
+                <a href="https://github.com/SK-Saba-Tarannum/" ><img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="" class="icon" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="2000">
+
+                </div><br>
+            <div >
+                <button id="button" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="2000">Download CV</button>
+            </div>
+        </div>
+        <div id="box2">
+            <div id="imgbox"  data-aos="fade-left"
+            data-aos-easing="linear"
+            data-aos-duration="1500" 
+            data-aos-duration="3000"data-aos-delay="1000">
+            <img src="https://th.bing.com/th?id=OIP.tnAqFC6VGLP-zlOth96QmAHaJC&w=226&h=276&c=8&rs=1&qlt=90&o=6&cb=13&dpr=1.3&pid=3.1&rm=2" alt="" id="sabaimg">
+        
+                </div>
+            
+        </div>
+    </div>
+    </section>
+    <section id="twotwo">
+            <div id="container2">
+                <div id="one2">
+                    <div id="imgbox" data-aos="fade-up-right" data-aos-delay="1000" data-aos-duration="3000">
+                        <img src="https://th.bing.com/th?id=OIP.tnAqFC6VGLP-zlOth96QmAHaJC&w=226&h=276&c=8&rs=1&qlt=90&o=6&cb=13&dpr=1.3&pid=3.1&rm=2" alt="" id="sabaimg" >
+                    </div>
+                </div>
+                <div id="two2">
+                    <h1 id="h12" data-aos="fade-up-left" data-aos-delay="1000" data-aos-duration="2000" >About <span id="me">Me</span></h1>
+                    <p id="developer" data-aos="fade-up-left" data-aos-delay="1000" data-aos-duration="2000" >Frontend developer</p>
+                    <p id="para2" data-aos="fade-up-left" data-aos-delay="1000" data-aos-duration="2000" >This front-end developer excels in creating visually appealing and user-friendly interfaces. With strong skills in HTML, CSS, and JavaScript, they deliver responsive and accessible designs that enhance user experience. Their commitment to clean code and performance optimization positions them as a valuable asset in the IT development sector.</p>
+                    <button id="button2" data-aos="fade-up-left" data-aos-delay="1000" data-aos-duration="2000" >Read More</button>    
+                </div>
+            </div>
+            <div id="left">
+                
+            </div>
+    </section>
+    <section id="three">
+        <h1 id="Latest"><span class="span">Skills</span></h1>
+
+            <div id="container3">
+                    <div id="one3" class="three33 color" data-aos="flip-left" data-aos-delay="1000" data-aos-duration="2000">
+                        <img src="html.png" alt="" class="iconimg">
+                        <p class="para3">My HTML practice focuses on semantic structure, accessibility, responsiveness, validation, and optimization for a clear, usable, and efficient web experiance</p>          </div>
+                    <div id="two3" class="three33 color" data-aos="flip-right" data-aos-delay="1000" data-aos-duration="2000">
+                        <img src="css-3.png" alt="" class="iconimg">
+                        <p class="para3">My CSS practice ensures responsive design, modular styling, clean code, cross-browser compatibility, and optimized performance for a seamless user experiance</p>
+                    </div>
+                    <div id="three3" class="three33 color" data-aos="flip-left" data-aos-delay="1000" data-aos-duration="2000">
+                        <img src="java-script.png" alt="" class="iconimg">
+                        <p class="para3">My JavaScript practice includes efficient code, asynchronous handling, modular design, event-driven interactions, and error-free debugging for dynamic, high-performance function </p>
+                    </div>
+                    <div id="one3" class="three33 color" data-aos="flip-right" data-aos-delay="1000" data-aos-duration="2000">
+                        <img src="python.png" alt="" class="iconimg">
+                        <p class="para3">My Python practice emphasizes clean code, efficient algorithms, modular design, robust error handling, and readable documentation for reliable, maintainable software.</p>
+                    </div>
+                </div>    
+    </section>
+    
+    <section id="four">
+        <h1 id="Latest">Latest <span class="span">Project</span></h1>
+
+        <div id="container4">
+        <div id="one4" class="four44"data-aos="zoom-in-right" data-aos-delay="1000" data-aos-duration="2000"><img src="Screenshot 2024-09-11 131727.png" alt="" class="projectimg"></div>
+        <div id="two4" class="four44" data-aos="zoom-in-up" data-aos-delay="1000" data-aos-duration="2000"><img src="Screenshot 2024-09-11 140416.png" alt="" class="projectimg"></div>
+        <div id="three4" class="four44" data-aos="zoom-in-left" data-aos-delay="1000" data-aos-duration="2000"><img src="Screenshot 2024-09-11 132136.png" alt="" class="projectimg"></div>
+        <div id="four4" class="four44" data-aos="zoom-in-right" data-aos-delay="1000" data-aos-duration="2000"><img src="Screenshot 2024-09-11 134641.png" alt="" class="projectimg"></div>
+        <div id="five4" class="four44" data-aos="zoom-in-down" data-aos-delay="1000" data-aos-duration="2000"><img src="Screenshot 2024-09-11 140516.png" alt="" class="projectimg"></div>
+        <div id="six4" class="four44" data-aos="zoom-in-left" data-aos-delay="1000" data-aos-duration="2000"><img src="Screenshot 2024-09-11 132404.png" alt="" class="projectimg"></div>
+
+        </div>
+    </section>
+    <section id="five">
+        <h1 id="Latest">Contact <span class="span">Me</span></h1>
+        <div id="five5" data-aos="zoom-in-up" data-aos-delay="1000" data-aos-duration="2000">
+            <input type="text" id="name1" placeholder="name">
+            <input type="text" id="address" placeholder="address">
+            <input type="number" id="number" placeholder="Mobile number">
+            <input type="Emial" id="Email" placeholder="Email">
+            <input type="text" id="message" placeholder="Your Message" class="placeholder-left">
+            <button id="button3">Send Message</button>    
+
+        </div>
+    </section>
+</body>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+
+    
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed=new Typed("#textchanging",{
+            strings:["Programmer...","Developer...","Designer..."],
+            typeSpeed:150,
+            backSpeed:150,
+            loop:true
+        })
+        const menubtn=document.getElementById("menu");
+        const closingbtn=document.getElementById("closeingicon");
+        const navtagmobileview=document.getElementById("navtagmobileview")
+
+        menubtn.addEventListener("click",menufunc);
+        closingbtn.addEventListener("click",closefunc);
+
+        function menufunc(){
+            menubtn.style.display="none";
+            closingbtn.style.display="block"
+            navtagmobileview.style.display="block";
+        }
+        function closefunc(){
+            menubtn.style.display="block";
+            closingbtn.style.display="none"
+            navtagmobileview.style.display="none";
+        }
+
+
+
+    </script>
+</body>
+</html>
